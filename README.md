@@ -1,6 +1,6 @@
-# vuex-ile-daha-iyi-state-yonetimi
+# vuex-state-managment-example
 
-> A Vue.js project
+> A simple vuex example
 
 ## Build Setup
 
