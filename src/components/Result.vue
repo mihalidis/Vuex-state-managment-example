@@ -1,7 +1,14 @@
 <template>
   <div>
-    <p class="counter-container"> Counter : {{ double }}</p>
-    <p class="counter-container"> Counter : {{ triple }}</p>
+    <p class="counter-container"> Counter : {{ counter }}</p>
+    <br>
+    <hr>
+    <p class="counter-container"> Counter x 2 : {{ double }}</p>
+    <br>
+    <hr>
+    <p class="counter-container"> Counter x 3 : {{ triple }}</p>
+    <br>
+    <hr>
   </div>
 </template>
 <script>
@@ -10,7 +17,8 @@ import { mapGetters } from 'vuex';
     computed: {
       ...mapGetters({
         double: 'doubleCounter',
-        triple: 'tripleCounter'
+        triple: 'tripleCounter',
+        counter: 'counter'
       })
     }
   }

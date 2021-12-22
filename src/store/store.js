@@ -13,17 +13,30 @@ export const store = new Vuex.Store({
         },
         tripleCounter(state) {
             return state.counter * 3;
+        },
+        counter(state) {
+            return state.counter;
         }
     },
     mutations: {
- /*       updateCounter(state, value) {
-            state.counter += value;
-        }*/
         increaseCounter(state) {
             state.counter++;
         },
         decreaseCounter(state) {
             state.counter--;
         }
+    },
+    actions: {
+        incAsync({commit}, payload) {
+            // use setTimeout for simulating async request
+            setTimeout(() => {
+                commit("increaseCounter");
+            }, payload.time);
+        },
+        decAsync({commit}, payload) {
+            setTimeout(() => {
+                commit("decreaseCounter");
+            }, payload.time);
+        },
     }
 });
