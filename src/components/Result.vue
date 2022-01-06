@@ -1,14 +1,14 @@
 <template>
   <div>
     <p class="counter-container"> Counter : {{ counter }}</p>
-    <br>
     <hr>
     <p class="counter-container"> Counter x 2 : {{ double }}</p>
-    <br>
     <hr>
     <p class="counter-container"> Counter x 3 : {{ triple }}</p>
-    <br>
     <hr>
+    <input type="text" v-model="value">
+    <br>
+    Value: {{ value }}
   </div>
 </template>
 <script>
@@ -19,8 +19,17 @@ import { mapGetters } from 'vuex';
         double: 'doubleCounter',
         triple: 'tripleCounter',
         counter: 'counter'
-      })
-    }
+      }),
+      value: {
+        get() {
+          return this.$store.getters.getValue;
+        },
+        set(value) {
+          this.$store.dispatch("valueData", value);
+        }
+
+      }
+    },
   }
 
 </script>
